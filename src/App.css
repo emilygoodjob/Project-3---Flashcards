@@ -21,6 +21,7 @@ body {
   background-size: cover;
 }
 
+/* Card Transform */
 .Card {
   width: 800px;
   height: 450px;
@@ -29,14 +30,45 @@ body {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  margin: 40px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 30px;
   border-radius: 10px;
   padding-bottom: 30px;
-  background-color: rgb(255, 255, 255, 0.5);
-  perspective: 10000px;
+  background-color: rgb(255, 255, 255, 0);
+  /* Adds some depth to the flip effect */
+  perspective: 1000px; 
 }
 
+.CardInner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.2s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.Card.flipped .CardInner {
+  transform: rotateX(180deg);
+}
+
+.CardFront, .CardBack {
+  background-color: rgb(250, 174, 169, 0.8);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Prevents the back from being visible when flipped */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 30px;
+}
+
+.CardBack {
+  transform: rotateX(180deg);
+}
+
+/* Text */
 h1 {
   font-size: 40px;
 }
@@ -49,6 +81,7 @@ h2, h4 {
   font-size: 30px;
 }
 
+/* Button */
 .button {
   background-color: #FAAEA9;
   border: none;

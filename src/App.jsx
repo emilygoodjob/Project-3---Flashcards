@@ -15,18 +15,16 @@ const App = () => {
     {"question": "I'm Hungry", "answer": "我饿了"},
     {"question": "My Name is ...", "answer": "我的名字是..."}
   ];
-                  
+  
   const [currIndex, setCurIndex] = useState(0);
-  const [showAnswer, setShowAnswer] = useState(false);
+  const [flipped, setFlipped] = useState(false);
 
-  // whether flip card
-  const flipCard = () => setShowAnswer(!showAnswer);
+  const flipCard = () => setFlipped(!flipped);
 
-  // Choose random card
   const showRandomCard = () => {
     const randIndex = Math.floor(Math.random() * pairs.length);
     setCurIndex(randIndex);
-    setShowAnswer(false);
+    setFlipped(false); // Reset flip on new card
   }
 
   return (
@@ -34,16 +32,23 @@ const App = () => {
       <div className='Contents'>
         <h1>Chinese Learning Flashcards!</h1>
         <h2>Don't know how to start learning Chinese? Test to learn basic words here!</h2>
-        <h3>Number of cards: 10</h3>
+        <h3>Number of cards: {pairs.length}</h3>
       </div>
-      <div className='Card' onClick={flipCard}>
-        <h4>{showAnswer ? pairs[currIndex].answer : pairs[currIndex].question}</h4>
+      <div className={`Card ${flipped ? 'flipped' : ''}`} onClick={flipCard}>
+        <div className="CardInner">
+          <div className="CardFront">
+            <h4>{pairs[currIndex].question}</h4>
+          </div>
+          <div className="CardBack">
+            <h4>{pairs[currIndex].answer}</h4>
+          </div>
+        </div>
       </div>
       <div>
         <button className='button' onClick={showRandomCard}>Next</button> 
       </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
