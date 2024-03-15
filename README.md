@@ -4,7 +4,7 @@ Submitted by: **Emily Gao Wange**
 
 This web app: **A flash cards users flip to learn or test their Chinese**
 
-Time spent: **8** hours spent in total
+Time spent: **4** hours spent in total
 
 ## Required Features
 
@@ -17,7 +17,7 @@ The following **required** functionality is completed:
 
 The following **optional** features are implemented:
 
-- [ ] A shuffle button is used to randomize the order of the cards
+- [x] A shuffle button is used to randomize the order of the cards
 - [ ] A user's answer may be counted as correct even when it is slightly different from the target answer
 - [ ] A counter displays the user's current and longest streak of correct responses
 - [ ] A user can mark a card that they have mastered and have it removed from the pool of answers as well as added to a list of mastered cards

@@ -46,6 +46,21 @@ const App = () => {
     }
   };
 
+  // Shuffle function
+  const shuffleArray = (array) => {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+    }
+  };
+
+  // Shuffle prevIndices function
+  const shufflePrevIndices = () => {
+    const newPrevIndices = [...prevIndices]; // Clone the array to avoid directly mutating state
+    shuffleArray(newPrevIndices);
+    setPrevIndices(newPrevIndices);
+  };
+
   return (
     <div className='Container'>
       <div className='Contents'>
@@ -75,7 +90,7 @@ const App = () => {
       <div>
         <button className='button orderButton' onClick={showPrevCard}>Prev</button> 
         <button className='button orderButton' onClick={showRandomCard}>Next</button> 
-        <button className='button shuffleButton'>Shuffle Cards</button>
+        <button className='button shuffleButton' onClick={shufflePrevIndices}>Shuffle Cards</button>
       </div>
     </div>
   );
