@@ -17,15 +17,30 @@ const App = () => {
   ];
   
   const [currIndex, setCurIndex] = useState(0);
+  const [prevIndices, setPrevIndices] = useState([]);
   const [flipped, setFlipped] = useState(false);
 
   const flipCard = () => setFlipped(!flipped);
 
   const showRandomCard = () => {
     const randIndex = Math.floor(Math.random() * pairs.length);
+    if (prevIndices[prevIndices.length - 1] !== randIndex) {
+      // Save current index before moving to next
+      setPrevIndices([...prevIndices, currIndex]); 
+    }
     setCurIndex(randIndex);
-    setFlipped(false); // Reset flip on new card
-  }
+    setFlipped(false);
+  };
+
+  const showPrevCard = () => {
+    if (prevIndices.length > 0) {
+      // Get the last index
+      const prevIndex = prevIndices.pop();
+      setCurIndex(prevIndex);
+      setPrevIndices([...prevIndices]); 
+      setFlipped(false);
+    }
+  };
 
   return (
     <div className='Container'>
@@ -45,6 +60,7 @@ const App = () => {
         </div>
       </div>
       <div>
+        <button className='button' onClick={showPrevCard}>Prev</button> 
         <button className='button' onClick={showRandomCard}>Next</button> 
       </div>
     </div>
