@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import InputAnswer from "./Components/inputAnswer.jsx";
 
 const App = () => {
 
@@ -19,6 +20,7 @@ const App = () => {
   const [currIndex, setCurIndex] = useState(0);
   const [prevIndices, setPrevIndices] = useState([]);
   const [flipped, setFlipped] = useState(false);
+  const [resetKey, setResetKey] = useState(0);
 
   const flipCard = () => setFlipped(!flipped);
 
@@ -30,6 +32,7 @@ const App = () => {
     }
     setCurIndex(randIndex);
     setFlipped(false);
+    setResetKey(prevKey => prevKey + 1);
   };
 
   const showPrevCard = () => {
@@ -39,6 +42,7 @@ const App = () => {
       setCurIndex(prevIndex);
       setPrevIndices([...prevIndices]); 
       setFlipped(false);
+      setResetKey(prevKey => prevKey + 1);
     }
   };
 
@@ -59,9 +63,19 @@ const App = () => {
           </div>
         </div>
       </div>
+
+      <div className="inputContainer">
+        <h3 className="guess-text">Guess the answer here:</h3>
+        <InputAnswer
+          key={resetKey}
+          correctAnswer={pairs[currIndex].answer} 
+        />
+      </div>
+
       <div>
-        <button className='button' onClick={showPrevCard}>Prev</button> 
-        <button className='button' onClick={showRandomCard}>Next</button> 
+        <button className='button orderButton' onClick={showPrevCard}>Prev</button> 
+        <button className='button orderButton' onClick={showRandomCard}>Next</button> 
+        <button className='button shuffleButton'>Shuffle Cards</button>
       </div>
     </div>
   );
