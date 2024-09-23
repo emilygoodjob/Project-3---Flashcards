@@ -1,30 +1,27 @@
 # Web Development Project 3 - *Flashcards*
 
-Submitted by: **Emily Gao Wange**
+Submitted by: Emily Gao Wang
+Total time spent: 4 hours
 
-This web app: **A flash cards users flip to learn or test their Chinese**
+## Overview
 
-Time spent: **4** hours spent in total
+This web app allows users to test their Chinese knowledge through interactive flashcards, providing real-time feedback and navigation between cards.
 
-## Required Features
+## Features
 
-The following **required** functionality is completed:
+**Core Functionality**
 
-- [x] **The user can enter their guess in a box before seeing the flipside of the card**
-- [x] **Clicking on a submit button shows visual feedback about whether the answer was correct or incorrect**
-- [x] **A back button is displayed on the card and can be used to return to the previous card in a set sequence**
-- [x] **A next button is displayed on the card and can be used to navigate to the next card in a set sequence**
+- Users can input guesses before revealing the flip side of the card.
+- Visual feedback is provided on whether the guess was correct or incorrect.
+- Users can navigate through the card set with next and back buttons.
 
-The following **optional** features are implemented:
+**Optional Features**
 
-- [x] A shuffle button is used to randomize the order of the cards
-- [ ] A user's answer may be counted as correct even when it is slightly different from the target answer
-- [ ] A counter displays the user's current and longest streak of correct responses
-- [ ] A user can mark a card that they have mastered and have it removed from the pool of answers as well as added to a list of mastered cards
+- Shuffle button randomizes the order of the cards.
 
-The following **additional** features are implemented:
+**Additional Features**
 
-* [x] Add hover to buttons and cards
+- Hover effects added to buttons and cards for improved user interaction.
 
 ## Video Walkthrough
 
@@ -45,16 +42,4 @@ Read lab 3 for details on how to create the input functionalities.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-        http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
+This project is licensed under the Apache License, Version 2.0. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0.
