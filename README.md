@@ -36,10 +36,6 @@ GIF created with LICEcap.
 [ScreenToGif](https://www.screentogif.com/) for Windows
 [peek](https://github.com/phw/peek) for Linux. -->
 
-## Notes
-
-Read lab 3 for details on how to create the input functionalities.
-
 ## License
 
 This project is licensed under the Apache License, Version 2.0. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0.
